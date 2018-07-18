@@ -23,6 +23,7 @@
     "homepage": "https://github.com/SumiMakito/Awesome-qr.js#readme",
     "dependencies": {
         "canvas-prebuilt": "^1.6.5-prerelease.1",
-        "request": "^2.83.0"
+        "fs": "0.0.1-security",
+        "request": "^2.87.0"
     }
 }
