@@ -13,6 +13,10 @@ Check out our [**brand-new** live demo](https://www.bitcat.cc/webapp/awesome-qr/
 
 Or you can also access the live demo by typing `bitcat.cc/awesome` in the browser on your smartphone.
 
+### new qrCode with border
+
+![https://github.com/Gorniv/Awesome-qr.js](./test.png)
+
 ### Compatibility
 
 > Awesome-qr.js is compatible with following browsers.

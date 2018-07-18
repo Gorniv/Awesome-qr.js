@@ -2,7 +2,7 @@ let AwesomeQR = require('./awesome-qr-node');
 var fs = require('fs');
 
 new AwesomeQR().create({
-    text: 'https://vqr.mx/T74SR',
+    text: 'https://github.com/Gorniv/Awesome-qr.js',
     size: 2048,
 
     backgroundImage: './assets/angular.png',
