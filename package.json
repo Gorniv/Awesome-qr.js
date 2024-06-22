@@ -23,8 +23,10 @@
     },
     "homepage": "https://github.com/SumiMakito/Awesome-qr.js#readme",
     "dependencies": {
-        "canvas-prebuilt": "^1.6.5-prerelease.1",
         "fs": "0.0.1-security",
-        "request": "^2.87.0"
+        "request": "^2.88.2",
+        "node-pre-gyp":"0.17.0",
+        "@mapbox/node-pre-gyp": "1.0.11",
+        "canvas": "2.11.2"
     }
 }

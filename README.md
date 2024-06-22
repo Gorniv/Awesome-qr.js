@@ -1,4 +1,14 @@
-# Awesome-qr.js 
+# QR
+
+```bash
+node start.js
+```
+
+```bash
+brew install pkg-config cairo pango libpng jpeg giflib librsvg pixman python-setuptools
+```
+
+# Awesome-qr.js
 
 [![npm version](https://badge.fury.io/js/awesome-qr.svg)](https://badge.fury.io/js/awesome-qr)
 [![license](https://img.shields.io/github/license/SumiMakito/Awesome-qr.js.svg)](https://www.apache.org/licenses/LICENSE-2.0)
@@ -21,13 +31,13 @@ Or you can also access the live demo by typing `bitcat.cc/awesome` in the browse
 
 > Awesome-qr.js is compatible with following browsers.
 
-- Chrome 4+ (Chrome for Android 53+)
-- Firefox 3.6+ (Firefox for Android 49+)
-- Opera 9+ (Opera Mobile 10+)
-- Safari 4+ (iOS Safari 3.2+)
-- Android Browser 3+
-- Edge 12+
-- IE 9+
+-   Chrome 4+ (Chrome for Android 53+)
+-   Firefox 3.6+ (Firefox for Android 49+)
+-   Opera 9+ (Opera Mobile 10+)
+-   Safari 4+ (iOS Safari 3.2+)
+-   Android Browser 3+
+-   Edge 12+
+-   IE 9+
 
 ### Samples
 
@@ -35,15 +45,15 @@ Try to scan these QR codes below with your smart phone.
 
 #### Simple & normal styles
 
-Sample 1| Sample 2| Sample 3
------------- | ------------- | -------------
-<img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-1.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-2.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-3.png" width="350">
+| Sample 1                                                                                                       | Sample 2                                                                                                       | Sample 3                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-1.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-2.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-3.png" width="350"> |
 
 #### With <del>magical</del> extra options
 
-Binarized|With a logo|Custom color|With GIF background
------------- | ------------- | ------------- | -------------
-<img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-4.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-5.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-6.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-7.gif" width="350">
+| Binarized                                                                                                      | With a logo                                                                                                    | Custom color                                                                                                   | With GIF background                                                                                            |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-4.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-5.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-6.png" width="350"> | <img src="https://raw.githubusercontent.com/SumiMakito/Awesome-qr.js/master/art/awesome-qr-7.gif" width="350"> |
 
 ### Play with Awesome-qr.js
 
@@ -63,11 +73,11 @@ npm install awesome-qr --save
 let AwesomeQR = require('awesome-qr');
 
 new AwesomeQR().create({
-	text: 'Makito loves Kafuu Chino.',
-	size: 500,
-	callback: (data) => {
-	    // binary PNG data
-	}
+    text: 'Makito loves Kafuu Chino.',
+    size: 500,
+    callback: (data) => {
+        // binary PNG data
+    },
 });
 ```
 
@@ -99,22 +109,23 @@ Import require.js:
 Then, require awesome-qr.js:
 
 ```javascript
-// This will specify the base path for awesome-qr.js, gif.js, and gif.worker.js. 
+// This will specify the base path for awesome-qr.js, gif.js, and gif.worker.js.
 // In the case showed above, the base path should be "js".
 // The variable's name should NOT be changed.
-var __awesome_qr_base_path = "js"; 
+var __awesome_qr_base_path = 'js';
 
 // require awesome-qr.js
 require([__awesome_qr_base_path + '/awesome-qr'], function (AwesomeQR) {
-	// ... and make use of it
-	AwesomeQR.create({
-		text: 'Makito loves Kafuu Chino.',
-		size: 800,
-		margin: 20,
-		bindElement: 'qrcode'
-	});
+    // ... and make use of it
+    AwesomeQR.create({
+        text: 'Makito loves Kafuu Chino.',
+        size: 800,
+        margin: 20,
+        bindElement: 'qrcode',
+    });
 });
 ```
+
 ### More examples
 
 #### 1. With a background image
@@ -124,38 +135,38 @@ require([__awesome_qr_base_path + '/awesome-qr'], function (AwesomeQR) {
 ```javascript
 let request = require('request');
 let AwesomeQR = require('awesome-qr');
-const {Image} = require('canvas');
+const { Image } = require('canvas');
 
 let options = {
-    url: "https://avatars3.githubusercontent.com/u/5277268?s=460&v=4",
+    url: 'https://avatars3.githubusercontent.com/u/5277268?s=460&v=4',
     method: 'GET',
-    encoding: null
+    encoding: null,
     // ^ this is necessary since we are not going to
     //   get the image as a string.
 };
 
 request.get(options, (error, response, body) => {
-	if (!error && response.statusCode === 200) {
-		// load the background image
-		let backgroundImage = new Image;
-		backgroundImage.src = body;
-		
-		new AwesomeQR().create({
-			text: 'Makito loves Kafuu Chino.',
-			size: 500,
-			backgroundImage: backgroundImage,
-			autoColor: true,
-			callback: (data) => {
-		    	if (data === undefined) {
-		    		console.log('failed to generate the QR code');
-				} else {
-					// play with binary PNG data
-				}
-			}
-		});
-	} else {
-		console.log('failed to get the background image');
-	}
+    if (!error && response.statusCode === 200) {
+        // load the background image
+        let backgroundImage = new Image();
+        backgroundImage.src = body;
+
+        new AwesomeQR().create({
+            text: 'Makito loves Kafuu Chino.',
+            size: 500,
+            backgroundImage: backgroundImage,
+            autoColor: true,
+            callback: (data) => {
+                if (data === undefined) {
+                    console.log('failed to generate the QR code');
+                } else {
+                    // play with binary PNG data
+                }
+            },
+        });
+    } else {
+        console.log('failed to get the background image');
+    }
 });
 ```
 
@@ -165,22 +176,20 @@ request.get(options, (error, response, body) => {
 
 ```javascript
 var img = new Image();
-img.crossOrigin = "Anonymous";
+img.crossOrigin = 'Anonymous';
 img.onload = () => {
-	AwesomeQR.create({
-		text: 'Makito loves Kafuu Chino.',
-		size: 800,
-		margin: 20,
-		backgroundImage: img,
-		bindElement: 'qrcode'
-	});
+    AwesomeQR.create({
+        text: 'Makito loves Kafuu Chino.',
+        size: 800,
+        margin: 20,
+        backgroundImage: img,
+        bindElement: 'qrcode',
+    });
 };
-img.src = "https://avatars3.githubusercontent.com/u/5277268?s=460&v=4";
-
+img.src = 'https://avatars3.githubusercontent.com/u/5277268?s=460&v=4';
 ```
 
 > Note that the Image loads images asynchronously; that is to say, you will need to set a callback in order to use the image after it has finished loading. For more information, please follow the issue [#8](https://github.com/SumiMakito/Awesome-qr.js/issues/8).
-
 
 #### 2. With a logo image at center
 
@@ -192,17 +201,17 @@ Not yet supported.
 
 ```javascript
 var logo = new Image();
-logo.crossOrigin = "Anonymous";
+logo.crossOrigin = 'Anonymous';
 logo.onload = () => {
-	AwesomeQR.create({
-		text: 'Makito loves Kafuu Chino.',
-		size: 800,
-		margin: 20,
-		logoImage: logo,
-		bindElement: 'qrcode'
-	});
+    AwesomeQR.create({
+        text: 'Makito loves Kafuu Chino.',
+        size: 800,
+        margin: 20,
+        logoImage: logo,
+        bindElement: 'qrcode',
+    });
 };
-logo.src = "https://avatars3.githubusercontent.com/u/5277268?s=460&v=4";
+logo.src = 'https://avatars3.githubusercontent.com/u/5277268?s=460&v=4';
 ```
 
 #### 3. Use a GIF image as background
@@ -221,17 +230,17 @@ var r = new FileReader();
 
 // set up an onload listener
 r.onload = function (e) {
-	// get the ArrayBuffer
+    // get the ArrayBuffer
     var ab = e.target.result;
-    
+
     AwesomeQR.create({
-		text: 'Makito loves Kafuu Chino.',
-		size: 800,
-		margin: 20,
-		gifBackground: ab, 
-		// ^ use the ArrayBuffer
-		bindElement: 'qrcode'
-	});
+        text: 'Makito loves Kafuu Chino.',
+        size: 800,
+        margin: 20,
+        gifBackground: ab,
+        // ^ use the ArrayBuffer
+        bindElement: 'qrcode',
+    });
 };
 
 // read as ArrayBuffer
@@ -246,17 +255,17 @@ It usually takes a longer time to decode and encode the GIF, and generate an ani
 
 #### Basic
 
-Option | Client-side (browsers) | Server-side (Node.js)
-:------|:-----------------------|:---------------------
-text | Required | Required
-size | Required | Required
-margin | Optional | Optional
-dotScale | Optional | Optional
-maskedDots | Optional | Not supported
-correctLevel | Optional | Optional
-whiteMargin | Optional | Optional
-bindElement | Optional | Not supported
-callback | Optional | Optional
+| Option       | Client-side (browsers) | Server-side (Node.js) |
+| :----------- | :--------------------- | :-------------------- |
+| text         | Required               | Required              |
+| size         | Required               | Required              |
+| margin       | Optional               | Optional              |
+| dotScale     | Optional               | Optional              |
+| maskedDots   | Optional               | Not supported         |
+| correctLevel | Optional               | Optional              |
+| whiteMargin  | Optional               | Optional              |
+| bindElement  | Optional               | Not supported         |
+| callback     | Optional               | Optional              |
 
 > At here, you can use `bindElement` to specify the id (without the leading #) of the element you want to fill the generated QR code image into. Element can be a `<div>` or a `<img>`.
 
@@ -264,41 +273,41 @@ callback | Optional | Optional
 
 #### Color scheme
 
-Option | Client-side (browsers) | Server-side (Node.js)
-:------|:-----------------------|:---------------------
-colorDark | Optional | Optional
-colorLight | Optional | Optional
-autoColor | Optional | Optional
+| Option     | Client-side (browsers) | Server-side (Node.js) |
+| :--------- | :--------------------- | :-------------------- |
+| colorDark  | Optional               | Optional              |
+| colorLight | Optional               | Optional              |
+| autoColor  | Optional               | Optional              |
 
 > If `autoColor` is set, `colorDark` and `colorLight` will be ignored.
 
 #### Background image
 
-Option | Client-side (browsers) | Server-side (Node.js)
-:------|:-----------------------|:---------------------
-backgroundImage | Optional | Optional
-backgroundDimming | Optional | Optional
-gifBackground | Optional | Not supported
+| Option            | Client-side (browsers) | Server-side (Node.js) |
+| :---------------- | :--------------------- | :-------------------- |
+| backgroundImage   | Optional               | Optional              |
+| backgroundDimming | Optional               | Optional              |
+| gifBackground     | Optional               | Not supported         |
 
 > If `gifBackground ` is set, `backgroundImage ` will be ignored.
 
 #### Logo image
 
-Option | Client-side (browsers) | Server-side (Node.js)
-:------|:-----------------------|:---------------------
-logoImage | Optional | Not supported
-logoScale | Optional | Not supported
-logoMargin | Optional | Not supported
-logoCornerRadius | Optional | Not supported
+| Option           | Client-side (browsers) | Server-side (Node.js) |
+| :--------------- | :--------------------- | :-------------------- |
+| logoImage        | Optional               | Not supported         |
+| logoScale        | Optional               | Not supported         |
+| logoMargin       | Optional               | Not supported         |
+| logoCornerRadius | Optional               | Not supported         |
 
 > Actual size for the logo will be `logoScale*(size-2*margin)`.
 
 #### Post-processing
 
-Option | Client-side (browsers) | Server-side (Node.js)
-:------|:-----------------------|:---------------------
-binarize | Optional | Not supported
-binarizeThreshold | Optional | Not supported
+| Option            | Client-side (browsers) | Server-side (Node.js) |
+| :---------------- | :--------------------- | :-------------------- |
+| binarize          | Optional               | Not supported         |
+| binarizeThreshold | Optional               | Not supported         |
 
 > Value of `binarizeThreshold ` should be an integer greater than 0 and less than 255.
 
@@ -337,18 +346,18 @@ It is those generous sponsors who supports this project makes the Awesome-qr.js 
 
 I'd like to express my sincere appreciation to all the generous sponsors.
 
-- [Coxxs](https://coxxs.me/)       
+-   [Coxxs](https://coxxs.me/)
 
 Since sponsors' names will not show up here without their permissions, the list above only shows a part of all the sponsors. If you wish to have your name shown up here, please feel free to contact me.
-                        
+
 ### Support me
 
 If you really like Awesome-qr.js, please consider making a donation to support me. Thanks!
 
 You can find me by searching `sumimakito` in Alipay on Android/iOS devices, or click the links below.
 
-- [PayPal](https://www.paypal.me/makito)
-- [Alipay](https://qr.alipay.com/a6x02021re1jk4ftcymlw79)
+-   [PayPal](https://www.paypal.me/makito)
+-   [Alipay](https://qr.alipay.com/a6x02021re1jk4ftcymlw79)
 
 Also, you can try to scan the following QR code with Alipay or WeChat.
 
@@ -360,58 +369,58 @@ Also, you can try to scan the following QR code with Alipay or WeChat.
 
 ##### Ver. 1.2.0
 
-- Added the support for Node.js.
+-   Added the support for Node.js.
 
 ##### Ver. 1.1.0
 
-- Added the support for GIF backgrounds.
+-   Added the support for GIF backgrounds.
 
 ##### Ver. 1.0.10
 
-- Fixed a bug in the core library which would cause the too-early overflow.
+-   Fixed a bug in the core library which would cause the too-early overflow.
 
 ##### Ver. 1.0.9
 
-- Fixed a bug which would leave an empty space on the simple QRCode image which has no alignment patterns.
+-   Fixed a bug which would leave an empty space on the simple QRCode image which has no alignment patterns.
 
 ![](art/bug-fix-1.0.9.png)
 
 ##### Ver. 1.0.8
 
-- Fixed a bug which would leave white stripes between neighboring blocks while drawing QRCode at scale ```1.0```.
+-   Fixed a bug which would leave white stripes between neighboring blocks while drawing QRCode at scale `1.0`.
 
 ![](art/bug-fix-1.0.8.png)
 
 ##### Ver. 1.0.7
 
-- Minor fixes.
+-   Minor fixes.
 
 ##### Ver. 1.0.6
 
-- Fixed an issue related to the coordinate system.
+-   Fixed an issue related to the coordinate system.
 
 ##### Ver. 1.0.5
 
-- Now you may use Awesome-qr.js with [require.js](http://requirejs.org/).
-- New feature: Embedding a logo image in the QR code.
-- Added some features which previously only available on Android platform.
+-   Now you may use Awesome-qr.js with [require.js](http://requirejs.org/).
+-   New feature: Embedding a logo image in the QR code.
+-   Added some features which previously only available on Android platform.
 
 ##### Ver. 1.0.4
 
-- Compatibility improved.
+-   Compatibility improved.
 
 ##### Ver. 1.0.3
 
-- Now generated QR codes can be automatically filled into specified elements.
+-   Now generated QR codes can be automatically filled into specified elements.
 
 ##### Ver. 1.0.2, 1.0.1
 
-- Published to npmjs.
-- Now background images can be binarized.
+-   Published to npmjs.
+-   Now background images can be binarized.
 
 ##### Ver 1.0.0
 
-- Initial release.
+-   Initial release.
 
 ### Special thanks
 
@@ -427,7 +436,7 @@ Also, if you are developing Android apps, you can take a look at [AwesomeQRCode]
 
 ### Other versions
 
-- Vue 2.x component: [Vue-qr](https://github.com/Binaryify/vue-qr)
+-   Vue 2.x component: [Vue-qr](https://github.com/Binaryify/vue-qr)
 
 ### Copyright &amp; License
 
@@ -481,7 +490,7 @@ Copyright (c) 2009 Kazuhiko Arase
 URL: http://www.d-project.com/
 Licensed under the MIT license:
     http://www.opensource.org/licenses/mit-license.php
-The word "QR Code" is registered trademark of 
+The word "QR Code" is registered trademark of
 DENSO WAVE INCORPORATED
     http://www.denso-wave.com/qrcode/faqpatent-e.html
 ```
